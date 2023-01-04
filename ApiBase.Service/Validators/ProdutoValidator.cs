@@ -12,8 +12,8 @@ namespace ApiBase.Service.Validators
         {
             _categoriaRepository = categoriaRepository;
 
-            RuleFor(x => x.Situacao).Must(ValidarSituacao).WithMessage("O campo situação deve esta preenchido com true ou false");
-            RuleFor(x => x.CategoriaId).Must(ValidarCategoria).WithMessage("Nao foi encontrada nenhuma categoria!");
+            RuleFor(x => x.Situacao).Must(ValidarSituacao).WithMessage("O campo situação deve esta preenchido com true ou false.");
+            RuleFor(x => x.CategoriaId).Must(ValidarCategoria).WithMessage("Nao foi encontrada nenhuma categoria.");
         }
 
         private static bool ValidarSituacao(string situacao)
@@ -21,10 +21,10 @@ namespace ApiBase.Service.Validators
 
         private bool ValidarCategoria(long? categoriaId)
         {
-            if (categoriaId.HasValue)
+            if (categoriaId.HasValue && categoriaId != 0)
                 return _categoriaRepository.Find(categoriaId.Value) != null;
 
-            return false;
+            return true;
         }
              
     }

@@ -1,5 +1,4 @@
-﻿using ApiBase.Domain.Dtos;
-using ApiBase.Domain.Interfaces.Repositories;
+﻿using ApiBase.Domain.Interfaces.Repositories;
 using ApiBase.Domain.Interfaces.Repositories.Common;
 using ApiBase.Domain.Interfaces.Services;
 using ApiBase.Infra.Data.Repositories;
@@ -8,7 +7,6 @@ using ApiBase.Service.Services;
 using ApiBase.Service.Validators;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace ApiBase.Infra.CrossCutting
 {
@@ -43,6 +41,7 @@ namespace ApiBase.Infra.CrossCutting
         private static IServiceCollection AddValidators(this IServiceCollection services)
         {
             services.AddValidatorsFromAssemblyContaining<ProdutoValidator>();
+            services.AddValidatorsFromAssemblyContaining<CategoriaValidator>();
 
             return services;
         }
