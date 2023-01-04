@@ -1,7 +1,7 @@
 # ApiBase
 Api Base com cadastro de produtos e categorias
 
-* Neste projeto foi utilizado o DDD como metodologia de desing da aplicação, dividindo e camadas.
+* Neste projeto foi utilizado o DDD como metodologia de desing da aplicação, dividindo em camadas.
 * FluentValidation para validar os campos antes de executar os controllers.
 * Utilizado o pattern Repository.
 * Utilizado o Banco PostgreSql.
