@@ -9,37 +9,38 @@ namespace ApiBase.Controllers
     [Route("api/[controller]")]
     public class ProdutoController : BaseController
     {
-        [HttpGet]
-        public IActionResult BuscarTodos([FromServices] IProdutoService produtoService)
+        private readonly IProdutoService _produtoService;
+
+        public ProdutoController(IProdutoService produtoService)
         {
-            return Execute(() => produtoService.BuscarTodos());
+            _produtoService = produtoService;
+        }
+
+        [HttpGet]
+        public IActionResult BuscarTodos()
+        {
+            return Execute(() => _produtoService.BuscarTodos());
         }
 
         [HttpPost]
         [Route("inserir")]
-        public IActionResult Inserir(
-            [FromServices] IProdutoService produtoService,
-            [FromBody] ProdutoDto produto)
+        public IActionResult Inserir([FromBody] ProdutoDto produto)
         {
-            return Execute(() => produtoService.Inserir(produto));
+            return Execute(() => _produtoService.Inserir(produto));
         }
 
         [HttpPut]
         [Route("alterar")]
-        public IActionResult Alterar(
-            [FromServices] IProdutoService produtoService,
-            [FromBody] ProdutoDto produto)
+        public IActionResult Alterar([FromBody] ProdutoDto produto)
         {
-            return Execute(() => produtoService.Alterar(produto));
+            return Execute(() => _produtoService.Alterar(produto));
         }
 
         [HttpPost]
         [Route("Filtrar")]
-        public IActionResult Filtrar(
-            [FromServices] IProdutoService produtoService,
-            [FromForm] FiltroDto filtrosDto)
+        public IActionResult Filtrar([FromForm] FiltroDto filtrosDto)
         {
-            return Execute(() => produtoService.Filtrar(filtrosDto));
+            return Execute(() => _produtoService.Filtrar(filtrosDto));
         }
     }
 }

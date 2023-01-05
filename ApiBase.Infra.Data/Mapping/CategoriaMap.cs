@@ -1,8 +1,6 @@
 ﻿using ApiBase.Domain.Entities;
-using ApiBase.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 
 namespace ApiBase.Infra.Data.Mapping
 {

@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiBase.Infra.CrossCutting"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiBase.Service", "ApiBase.Service\ApiBase.Service.csproj", "{374FBE9F-5BC3-4070-A201-27D6980D53B8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{A80838D2-3299-4479-AFAF-E6B3FA3802CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBase.Test", "ApiBase.Test\ApiBase.Test.csproj", "{9BB7D429-1FF8-4A2E-90E9-06A0D0F1101D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{374FBE9F-5BC3-4070-A201-27D6980D53B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{374FBE9F-5BC3-4070-A201-27D6980D53B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{374FBE9F-5BC3-4070-A201-27D6980D53B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB7D429-1FF8-4A2E-90E9-06A0D0F1101D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB7D429-1FF8-4A2E-90E9-06A0D0F1101D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB7D429-1FF8-4A2E-90E9-06A0D0F1101D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB7D429-1FF8-4A2E-90E9-06A0D0F1101D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +71,7 @@ Global
 		{3C5AC414-1D99-4AA1-92CB-F92B5CB1EB2D} = {2F7106F9-8F59-4A8B-A312-29C8A24B0BB2}
 		{521B3E6A-199C-4C4A-A0C9-9B5327ED8A2D} = {3C5AC414-1D99-4AA1-92CB-F92B5CB1EB2D}
 		{374FBE9F-5BC3-4070-A201-27D6980D53B8} = {D4ECDBD3-4C40-4825-BC19-C2FACD8CE8B3}
+		{9BB7D429-1FF8-4A2E-90E9-06A0D0F1101D} = {A80838D2-3299-4479-AFAF-E6B3FA3802CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F0749E1-5CF8-47B3-AE89-D3F7120A86E8}

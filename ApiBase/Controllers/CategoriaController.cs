@@ -9,38 +9,37 @@ namespace ApiBase.Controllers
     [Route("api/[controller]")]
     public class CategoriaController : BaseController
     {
+        private readonly ICategoriaService _categoriaService;
+        public CategoriaController(ICategoriaService categoriaService)
+        {
+            _categoriaService = categoriaService;
+        }
 
         [HttpGet]
-        public IActionResult BuscarTodos([FromServices] ICategoriaService categoriaService)
+        public IActionResult BuscarTodos()
         {
-            return Execute(() => categoriaService.BuscarTodos());
+            return Execute(() => _categoriaService.BuscarTodos());
         }
 
         [HttpPost]
         [Route("inserir")]
-        public IActionResult Inserir(
-            [FromServices] ICategoriaService categoriaService,
-            [FromBody] CategoriaDto categoria)
+        public IActionResult Inserir([FromBody] CategoriaDto categoria)
         {
-            return Execute(() => categoriaService.Inserir(categoria));
+            return Execute(() => _categoriaService.Inserir(categoria));
         }
 
         [HttpPut]
         [Route("alterar")]
-        public IActionResult Alterar(
-            [FromServices] ICategoriaService categoriaService,
-            [FromBody] CategoriaDto categoria)
+        public IActionResult Alterar([FromBody] CategoriaDto categoria)
         {
-            return Execute(() => categoriaService.Alterar(categoria));
+            return Execute(() => _categoriaService.Alterar(categoria));
         }
 
         [HttpGet]
         [Route("Filtrar/nome/{nome}/situacao/{situacao}")]
-        public IActionResult Filtrar(
-            [FromServices] ICategoriaService categoriaService, 
-            string nome, bool situacao)
+        public IActionResult Filtrar(string nome, bool situacao)
         {
-            return Execute(() => categoriaService.Filtrar(nome, situacao));
+            return Execute(() => _categoriaService.Filtrar(nome, situacao));
         }
     }
 }
