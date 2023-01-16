@@ -14,7 +14,7 @@ create table "Produto" (
 	"Categoria_Id" int2 null,
 	"Descricao" varchar(250) not null,
 	"Preco" money,
-	"Situacao" bool not null,
+	"Ativo" bool not null,
 	primary key ("Id"),
 	constraint fk_categoria foreign key("Categoria_Id") references "Categoria"("Id")
 )
