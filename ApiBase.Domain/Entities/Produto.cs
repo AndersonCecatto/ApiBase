@@ -14,13 +14,13 @@ namespace ApiBase.Domain.Entities
             Id = produtoDto.Id;
             Descricao = produtoDto.Descricao;
             Preco = produtoDto.Preco;
-            Situacao = produtoDto.Situacao == "true";
+            Ativo = produtoDto.Ativo;
             CategoriaId = produtoDto.CategoriaId == 0 || !produtoDto.CategoriaId.HasValue ? null : produtoDto.CategoriaId;
         }
 
         public string Descricao { get; set; }
         public double Preco { get; set; }
-        public bool Situacao { get; set; }
+        public bool Ativo { get; set; }
         public long? CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
     }

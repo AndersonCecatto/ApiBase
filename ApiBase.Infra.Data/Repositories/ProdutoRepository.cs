@@ -22,7 +22,7 @@ namespace ApiBase.Infra.Data.Repositories
 
         public IEnumerable<Produto> Filtrar(FiltroDto filtroDto)
         {
-            var contexto = _apiBaseContext.Set<Produto>().Include(x => x.Categoria).Where(x => x.Situacao == filtroDto.SituacaoProduto).AsQueryable();
+            var contexto = _apiBaseContext.Set<Produto>().Include(x => x.Categoria).Where(x => x.Ativo == filtroDto.SituacaoProduto).AsQueryable();
 
             if (filtroDto.CategoriaId.HasValue && filtroDto.CategoriaId != 0)
                 contexto = contexto.Where(x => x.CategoriaId == filtroDto.CategoriaId);

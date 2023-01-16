@@ -24,7 +24,7 @@ namespace ApiBase.Test.Mock
                     },
                     Descricao = "Leite",
                     Preco = 4.25,
-                    Situacao = true
+                    Ativo = true
                 },
                 new Produto
                 {
@@ -33,7 +33,7 @@ namespace ApiBase.Test.Mock
                     Categoria = null,
                     Descricao = "Queijo",
                     Preco = 10.25,
-                    Situacao = true
+                    Ativo = true
                 },
                 new Produto
                 {
@@ -47,7 +47,7 @@ namespace ApiBase.Test.Mock
                     },
                     Descricao = "Coca-Cola",
                     Preco = 9.50,
-                    Situacao = true
+                    Ativo = true
                 }
             };
 
@@ -64,7 +64,7 @@ namespace ApiBase.Test.Mock
                 },
                 Descricao = "Frango",
                 Preco = 12.90,
-                Situacao = true
+                Ativo = true
             };
 
         protected static Categoria GetCategoria()

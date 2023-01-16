@@ -12,12 +12,8 @@ namespace ApiBase.Service.Validators
         {
             _categoriaRepository = categoriaRepository;
 
-            RuleFor(x => x.Situacao).Must(ValidarSituacao).WithMessage("O campo situação deve esta preenchido com true ou false.");
             RuleFor(x => x.CategoriaId).Must(ValidarCategoria).WithMessage("Nao foi encontrada nenhuma categoria.");
         }
-
-        private static bool ValidarSituacao(string situacao)
-            => situacao.ToUpper() == "TRUE" || situacao.ToUpper() == "FALSE";
 
         private bool ValidarCategoria(long? categoriaId)
         {

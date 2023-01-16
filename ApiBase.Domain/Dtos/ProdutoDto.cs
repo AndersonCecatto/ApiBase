@@ -14,13 +14,13 @@ namespace ApiBase.Domain.Dtos
             Id = produto.Id;
             Descricao = produto.Descricao;
             Preco = produto.Preco;
-            Situacao = produto.Situacao == true ? "ATIVO" : "INATIVO";
+            Ativo = produto.Ativo;
             CategoriaId = produto.CategoriaId;
         }
 
         public string Descricao { get; set; }
         public double Preco { get; set; }
-        public string Situacao { get; set; }
+        public bool Ativo { get; set; }
         public long? CategoriaId { get; set; }
     }
 }
