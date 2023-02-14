@@ -15,9 +15,11 @@ namespace ApiBase.Infra.Data.Repositories
         {
         }
 
-        public override IEnumerable<Produto> GetAll()
+        public IEnumerable<ProdutoDto> BuscarTodos()
         {
-            return _apiBaseContext.Set<Produto>().Include(x => x.Categoria).AsEnumerable();
+            return _apiBaseContext.Set<Produto>()
+                                  .Include(x => x.Categoria)
+                                  .Select(x => new ProdutoDto(x));
         }
 
         public IEnumerable<Produto> Filtrar(FiltroDto filtroDto)

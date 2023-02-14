@@ -8,5 +8,7 @@ namespace ApiBase.Domain.Interfaces.Repositories
     public interface IProdutoRepository : IBaseRepository<Produto>
     {
         IEnumerable<Produto> Filtrar(FiltroDto filtroDto);
+
+        IEnumerable<ProdutoDto> BuscarTodos();
     }
 }

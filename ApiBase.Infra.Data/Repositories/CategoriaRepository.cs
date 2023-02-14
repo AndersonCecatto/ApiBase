@@ -1,4 +1,5 @@
-﻿using ApiBase.Domain.Entities;
+﻿using ApiBase.Domain.Dtos;
+using ApiBase.Domain.Entities;
 using ApiBase.Domain.Interfaces.Repositories;
 using ApiBase.Infra.Data.Context;
 using ApiBase.Infra.Data.Repositories.Common;
@@ -11,6 +12,11 @@ namespace ApiBase.Infra.Data.Repositories
     {
         public CategoriaRepository(ApiBaseContext apiBaseContext) : base(apiBaseContext)
         {
+        }
+
+        public IEnumerable<CategoriaDto> BuscarTodos()
+        {
+            return _apiBaseContext.Set<Categoria>().Select(x => new CategoriaDto(x));
         }
 
         public IEnumerable<Categoria> Filtrar(string nome, bool situacao)

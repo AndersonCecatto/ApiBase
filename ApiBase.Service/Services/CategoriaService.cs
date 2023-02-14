@@ -9,17 +9,15 @@ namespace ApiBase.Service.Services
 {
     public class CategoriaService : BaseService<Categoria>, ICategoriaService
     {
+        private readonly ICategoriaRepository _categoriaRepository;
         public CategoriaService(ICategoriaRepository categoriaRepository) : base(categoriaRepository)
         {
+            _categoriaRepository = categoriaRepository;
         }
+
         public IEnumerable<CategoriaDto> BuscarTodos()
         {
-            var retorno = new List<CategoriaDto>();
-
-            foreach (var categoria in _baseRepository.GetAll())
-                retorno.Add(new CategoriaDto(categoria));
-
-             return retorno;
+            return _categoriaRepository.BuscarTodos();
         }
 
         public Categoria Inserir(CategoriaDto categoria) => Add(new Categoria(categoria));

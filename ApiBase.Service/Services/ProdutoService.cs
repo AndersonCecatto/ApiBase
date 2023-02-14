@@ -9,8 +9,11 @@ namespace ApiBase.Service.Services
 {
     public class ProdutoService : BaseService<Produto>, IProdutoService
     {
+        private readonly IProdutoRepository _produtoRepository;
+
         public ProdutoService(IProdutoRepository produtoRepository) : base(produtoRepository)
         {
+            _produtoRepository = produtoRepository;
         }
 
         public Produto Alterar(ProdutoDto produto)
@@ -20,12 +23,7 @@ namespace ApiBase.Service.Services
 
         public IEnumerable<ProdutoDto> BuscarTodos()
         {
-            var retorno = new List<ProdutoDto>();
-
-            foreach (var produto in _baseRepository.GetAll())
-                retorno.Add(new ProdutoDto(produto));
-
-            return retorno;
+            return _produtoRepository.BuscarTodos();
         }
 
         public IEnumerable<Produto> Filtrar(FiltroDto filtrosDto)
